@@ -1,5 +1,6 @@
 #Mongoose Initial Start
-#Step-1
+
+# Step-1
 
 To start a project you have to create folder
 ~~~
@@ -12,19 +13,19 @@ Then go into your folder
 cd my-project
 ~~~
 
-#Step-2
+# Step-2
 ~~~
 npm init -y
 ~~~
 
-#step-3
+# step-3
 install packages
 
 ~~~
 npm install dotenv express jsonwebtoken cors mongodb cookie-parser mongoose
 ~~~
 
-#Step-4
+# Step-4
 
 Create index.js file and setup this
 ~~~
