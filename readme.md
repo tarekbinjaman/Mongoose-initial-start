@@ -49,3 +49,15 @@ app.listen(PORT, () => {
 ~~~
 
 then check server is running or not
+
+# step-5
+
+create .env file and write your mongoDB uri including username and password too
+
+~~~
+those are username and password which are commented. we are going to use this in the uri directly
+# DB_USER=assingment-10
+# DB_PASS=DD79zLTjAb-3g9A
+
+MONGODB_URI=mongodb+srv://assingment-10:DD79zLTjAb-3g9A@cluster0.vkwnn.mongodb.net/TakeCare?retryWrites=true&w=majority&appName=Cluster0
+~~~
