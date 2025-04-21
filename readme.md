@@ -265,7 +265,7 @@ module.exports = router;
 
 # step-10 
 
-Now we going to connect api to your database 
+Now we going to connect api to our database 
 
 At first, we store our users route in a variable called users
 
