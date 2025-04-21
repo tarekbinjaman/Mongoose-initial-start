@@ -61,3 +61,58 @@ those are username and password which are commented. we are going to use this in
 
 MONGODB_URI=mongodb+srv://assingment-10:DD79zLTjAb-3g9A@cluster0.vkwnn.mongodb.net/TakeCare?retryWrites=true&w=majority&appName=Cluster0
 ~~~
+
+# step-6 
+
+create db.js file and call your mongoDB uri from .env then use it in mongoose.connect
+
+~~~
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+
+// load env configuration
+dotenv.config();
+
+const connectDB = async () => {
+    try {
+      const conn = await mongoose.connect(process.env.MONGODB_URI, {
+        useNewUrlParser: true,
+      });
+      console.log(`MongoDB Connected: {conn.connection.host}`);
+    } catch (error) {
+      console.error(error.message);
+      process.exit(1);
+    }
+  }
+  
+  module.exports = connectDB;
+~~~
+
+# step-7 
+
+import db.js in index.js and store it in a vairable called connectDB
+
+~~~
+const express = require('express');
+const app = express();
+const connectDB = require('./db')
+
+
+const PORT = 3000;
+
+// body parser
+app.use(express.json());
+
+// connect to database
+connectDB();
+
+
+app.get('/', (req, res) => {
+  console.log("I am inside home page route handler");
+  res.send("Hello Jee, Welcome to CodeHelp");
+})
+
+app.listen(PORT, () => {
+  console.log("Server is Up")
+})
+~~~
